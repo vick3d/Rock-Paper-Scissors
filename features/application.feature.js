@@ -1,24 +1,34 @@
 require('../spec.helper');
 
-context('Your Description of the test scenario', () => {
-  // Initialize a browser and visit the server's root path
+describe('User can play a game of Rock Paper Scissors vs Computer', () => {
   before(async () => {
     await browser.init()
     await browser.visitPage('http://localhost:8080/')
   });
-
-  // Reload before each test 
+ 
   beforeEach(async () => {
     await browser.page.reload();
   });
 
-  // Make sure the browser closes after the test is finished
   after(() => {
     browser.close();
   });
 
-  // Example test
-  it('renders the correct page title', async () => {
-    expect(await browser.page.title()).to.eql('Puppeteer Mocha Scaffold');
-  });
+  it('can click on "Rock" and get result', async () => {
+    await browser.clickOnButton("button[class='rock']")
+    let content = await browser.getContent("[class='result']")
+    expect(content).to.be.oneOf(['Win','Loss','Draw']);
+  })
+
+  it('can click on "Paper" and get result', async () => {
+    await browser.clickOnButton("button[class='paper']")
+    let content = await browser.getContent("[class='result']")
+    expect(content).to.be.oneOf(['Win','Loss','Draw']);
+  })
+
+  it('can click on "Scissors" and get result', async () => {
+    await browser.clickOnButton("button[class='scissors']")
+    let content = await browser.getContent("[class='result']")
+    expect(content).to.be.oneOf(['Win','Loss','Draw']);
+  })
 });
