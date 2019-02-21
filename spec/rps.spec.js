@@ -12,7 +12,7 @@ describe('Rock Paper Scissors', () => {
     let playerChoice1 = choices[0]
     let playerChoice2 = choices[1]
     let playerChoice3 = choices[2]
-
+    
     it('Player chooses Rock and computer choice rock', () => {
         expect(rps.playGame(playerChoice1, "Rock")).to.equal("Draw")
     })
@@ -37,5 +37,17 @@ describe('Rock Paper Scissors', () => {
         expect(rps.playGame(playerChoice2, "Scissors")).to.equal("Loss")
     })
 
-    
+    it('Player choice Scissors and computer choice Scissors', () => {
+        expect(rps.playGame(playerChoice3, "Scissors")).to.equal("Draw")
+    })
+
+    it('Player choice Scissors and computer choice Paper', () => {
+        expect(rps.playGame(playerChoice3, "Paper")).to.equal("Win")
+    })
+
+    it('Player choice Scissors and computer choice Rock', () => {
+        expect(rps.playGame(playerChoice3, "Rock")).to.equal("Loss")
+    })
+
+        
 })
