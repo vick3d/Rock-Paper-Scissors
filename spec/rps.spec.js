@@ -3,7 +3,6 @@ const { Rps } = require('../spec.helper')
 describe('Rock Paper Scissors', () => {
     let rps = new Rps   
     const choices = ["Rock","Paper","Scissors"]
-    const results = ["Win", "Loss", "Tie"] 
 
     it('computer is expected to make a choice', () => {
         expect(rps.computerChoice()).to.be.oneOf(choices)
