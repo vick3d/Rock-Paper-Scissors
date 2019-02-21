@@ -16,19 +16,19 @@ describe('User can play a game of Rock Paper Scissors vs Computer', () => {
 
   it('can click on "Rock" and get result', async () => {
     await browser.clickOnButton("button[class='rock']")
-    let content = await browser.getContent("[class='result']")
+    let content = await page.getContent("[class='result']")
     expect(content).to.be.oneOf(['Win','Loss','Draw']);
   })
 
   it('can click on "Paper" and get result', async () => {
     await browser.clickOnButton("button[class='paper']")
-    let content = await browser.getContent("[class='result']")
+    let content = await page.getContent("[class='result']")
     expect(content).to.be.oneOf(['Win','Loss','Draw']);
   })
 
   it('can click on "Scissors" and get result', async () => {
     await browser.clickOnButton("button[class='scissors']")
-    let content = await browser.getContent("[class='result']")
+    let content = await page.getContent("[class='result']")
     expect(content).to.be.oneOf(['Win','Loss','Draw']);
   })
 });

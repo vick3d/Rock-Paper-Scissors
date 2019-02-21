@@ -8,15 +8,39 @@ function Rps() {
 
     this.playGame = function (playerChoice, computerChoice) {
         if(playerChoice === computerChoice) {
-            return 'Draw'
+            return ('Draw')
         }
         else if(( playerChoice === 'Rock' && computerChoice === 'Scissors' ) ||
                 ( playerChoice === 'Paper' && computerChoice === 'Rock' ) ||
                 ( playerChoice === 'Scissors' && computerChoice === 'Paper')) {
-            return 'Win'
+            return ('Win')
         }
         else  {
-            return 'Loss'
+            return ('Loss')
         }  
     }  
 }
+
+document.addEventListener('DOMContentLoaded', () => {
+    let rps  = new Rps
+    let result = document.querySelector('.result')
+
+    const rock = document.querySelector('.rock')
+    const paper = document.querySelector('.paper')
+    const scissors = document.querySelector('.scissors')
+
+    rock.addEventListener('click', function() { 
+        computerChoice = rps.computerChoice()
+        result.innerHTML = rps.playGame('Rock',computerChoice)
+    })
+
+    paper.addEventListener('click', function() {
+        computerChoice = rps.computerChoice() 
+        result.innerHTML = rps.playGame('Paper',computerChoice)
+    })
+    
+    scissors.addEventListener('click', function() {
+        computerChoice = rps.computerChoice() 
+        result.innerHTML = rps.playGame('Scissors',computerChoice)
+    })
+})
