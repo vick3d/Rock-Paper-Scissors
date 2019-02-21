@@ -11,7 +11,8 @@ function Rps() {
             return 'Draw'
         }
 
-        else if(playerChoice === 'Rock' && computerChoice === 'Scissors' ) {
+        else if((playerChoice === 'Rock' && computerChoice === 'Scissors' ) ||
+                (playerChoice === 'Paper' && computerChoice === 'Rock')) {
             return 'Win'
         }
 

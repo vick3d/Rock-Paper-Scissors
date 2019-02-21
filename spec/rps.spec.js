@@ -24,4 +24,18 @@ describe('Rock Paper Scissors', () => {
     it('Player choice Rock and computer choice Paper', () => {
         expect(rps.playGame(playerChoice1, "Paper")).to.equal("Loss")
     })
+
+    it('Player choice Paper and computer choice Paper', () => {
+        expect(rps.playGame(playerChoice2, "Paper")).to.equal("Draw")
+    })
+
+    it('Player choice Paper and computer choice Rock', () => {
+        expect(rps.playGame(playerChoice2, "Rock")).to.equal("Win")
+    })
+
+    it('Player choice Paper and computer choice Scissors', () => {
+        expect(rps.playGame(playerChoice2, "Scissors")).to.equal("Loss")
+    })
+
+    
 })
