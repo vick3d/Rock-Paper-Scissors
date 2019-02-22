@@ -8,6 +8,8 @@ describe('Rock Paper Scissors', () => {
         expect(rps.computerChoice()).to.be.oneOf(choices)
     })
 
+    //Test game rules
+
     let playerChoice1 = choices[0]
     let playerChoice2 = choices[1]
     let playerChoice3 = choices[2]
@@ -47,6 +49,4 @@ describe('Rock Paper Scissors', () => {
     it('Player choice Scissors and computer choice Rock', () => {
         expect(rps.playGame(playerChoice3, "Rock")).to.equal("Loss")
     })
-
-        
 })
