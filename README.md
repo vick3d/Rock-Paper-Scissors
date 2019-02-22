@@ -14,7 +14,9 @@ In order to play a game of Rock Paper Scissors
 I would like to choose from R P S and have a result
 
 ### Installing
+Initialize packagemanager
 ```npm init```
+Install dependecies
 ```npm install```
 
 
@@ -40,4 +42,4 @@ Viktor Olsson
 https://github.com/vick3d
 
 ### Deployment
-Heroku/netlify
+https://viktor-rockpaperscissors.netlify.com/
